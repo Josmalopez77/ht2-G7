@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Grupo # - Seminario Sistemas 1A</title>
+</head>
+<body style="background-color:#111; color:#0f0; font-family:monospace; text-align:center;">
+  <h1>Grupo # - Seminario de Sistemas 1A</h1>
+  <button onclick="getData()">Obtener JSON</button>
+  <pre id="output"></pre>
+
+  <script>
+    async function getData() {
+      try {
+        const response = await fetch("http://130.107.204.90/get-data");
+        const data = await response.json();
+        document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+      } catch (error) {
+        document.getElementById("output").textContent = "Error al obtener datos: " + error;
+      }
+    }
+  </script>
+</body>
+</html>
