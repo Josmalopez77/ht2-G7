@@ -76,7 +76,7 @@
   <pre id="output">Presiona el botón para cargar datos...</pre>
 
   <script>
-    const LOAD_BALANCER_IP = "130.107.204.90"; // Tu IP del Load Balancer
+    const LOAD_BALANCER_IP = "130.107.204.90"; 
     
     function showStatus(message, type = 'loading') {
       const statusDiv = document.getElementById("status");
@@ -136,12 +136,10 @@
       }
     }
 
-    // Auto-test al cargar la página
     window.addEventListener('load', () => {
       console.log('🚀 Frontend HTTPS cargado');
       console.log(`📡 Load Balancer: http://${LOAD_BALANCER_IP}`);
       
-      // Advertencia sobre Mixed Content
       if (location.protocol === 'https:') {
         console.warn('⚠️ ADVERTENCIA: Ejecutando HTTPS → HTTP requests (Mixed Content)');
         console.log('💡 Para producción, considera usar HTTPS end-to-end');
