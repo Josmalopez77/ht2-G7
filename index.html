@@ -1,150 +1,521 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grupo 7 - Seminario Sistemas 1A</title>
-  <style>
-    body {
-      background-color: #111;
-      color: #0f0;
-      font-family: 'Courier New', monospace;
-      text-align: center;
-      padding: 20px;
-      margin: 0;
-    }
-    h1 {
-      margin-bottom: 30px;
-      text-shadow: 0 0 10px #0f0;
-    }
-    button {
-      background-color: #0f0;
-      color: #111;
-      border: none;
-      padding: 15px 30px;
-      font-size: 16px;
-      font-family: inherit;
-      cursor: pointer;
-      border-radius: 5px;
-      margin: 20px;
-      transition: all 0.3s;
-    }
-    button:hover {
-      background-color: #00ff00;
-      box-shadow: 0 0 15px #0f0;
-    }
-    #output {
-      background-color: #222;
-      border: 1px solid #0f0;
-      padding: 20px;
-      margin: 20px auto;
-      max-width: 80%;
-      text-align: left;
-      border-radius: 5px;
-      box-shadow: inset 0 0 10px #0f0;
-      min-height: 100px;
-      white-space: pre-wrap;
-      overflow-wrap: break-word;
-    }
-    .status {
-      margin: 10px 0;
-      padding: 10px;
-      border-radius: 5px;
-    }
-    .loading {
-      color: #ff0;
-      border: 1px solid #ff0;
-    }
-    .error {
-      color: #f00;
-      border: 1px solid #f00;
-    }
-    .success {
-      color: #0f0;
-      border: 1px solid #0f0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zona 1 Guatemala - Guía Turística</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>🚀 Grupo 7 - Seminario de Sistemas 1A</h1>
-  <p>Load Balancer + Azure VMs</p>
-  
-  <button onclick="getData()">🔄 Obtener JSON desde Load Balancer</button>
-  <button onclick="testHealth()">❤️ Probar Health Check</button>
-  
-  <div id="status"></div>
-  <pre id="output">Presiona el botón para cargar datos...</pre>
+    <!-- Menú de navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="neon-text">Z1</span>
+                <span class="logo-text">Guatemala</span>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#santuarios" class="nav-link">Santuarios</a></li>
+                <li><a href="#lugares" class="nav-link">Lugares Turísticos</a></li>
+                <li><a href="#cultura" class="nav-link">Cultura</a></li>
+                <li><a href="#desarrolladores" class="nav-link">Desarrolladores</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <script>
-    const LOAD_BALANCER_IP = "130.107.204.90"; 
+    <div class="container">
+        <!-- Sección de Inicio -->
+        <section id="inicio" class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="neon-text">Zona 1</span> Guatemala
+                </h1>
+                <p class="hero-subtitle">Centro Histórico y Cultural de la Ciudad</p>
+                <div class="hero-description">
+                    Descubre la riqueza histórica y cultural del corazón de la Ciudad de Guatemala
+                </div>
+            </div>
+        </section>
+
+        <!-- Santuarios y Templos -->
+        <section id="santuarios" class="section">
+            <h2 class="section-title">
+                <span class="neon-text">⛪</span> Santuarios y Templos
+            </h2>
+            
+            <div class="place-card">
+                <div class="card-content">
+                    <h3 class="place-title">Catedral Metropolitana</h3>
+                    <p class="place-description">
+                        La Catedral Metropolitana de Santiago de Guatemala es el templo católico más importante del país. Construida entre 1782 y 1815, representa un magnífico ejemplo de la arquitectura colonial guatemalteca. Su fachada neoclásica y sus torres imponentes dominan la Plaza de la Constitución, siendo un símbolo icónico de la ciudad.
+                    </p>
+                    <div class="info-box">
+                        <div class="info-item">
+                            <span class="info-label">Ubicación:</span>
+                            <span>Plaza de la Constitución (Parque Central)</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Horario:</span>
+                            <span>Lunes a Domingo, 6:00 AM - 7:00 PM</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Entrada:</span>
+                            <span>Gratuita</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-placeholder">
+                    <img src="img/Catedral.jpg" alt="Catedral Metropolitana de Guatemala" class="place-image">
+                </div>
+            </div>
+
+            <div class="place-card">
+                <div class="card-content">
+                    <h3 class="place-title">Iglesia de San Francisco</h3>
+                    <p class="place-description">
+                        Una de las iglesias más antiguas y veneradas de Guatemala, conocida por albergar la imagen del Hermano Pedro de San José de Betancourt, santo guatemalteco. Su arquitectura barroca y su rica historia la convierten en un punto de peregrinación importante para los fieles católicos y un atractivo turístico cultural.
+                    </p>
+                    <div class="info-box">
+                        <div class="info-item">
+                            <span class="info-label">Ubicación:</span>
+                            <span>6a Calle entre 12 y 13 Avenida</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Horario:</span>
+                            <span>Lunes a Domingo, 6:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Entrada:</span>
+                            <span>Gratuita</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-placeholder">
+                    <img src="img/francisco.jpg" alt="Iglesia de San Francisco" class="place-image">
+                </div>
+            </div>
+
+            <div class="place-card">
+                <div class="card-content">
+                    <h3 class="place-title">Iglesia La Merced</h3>
+                    <p class="place-description">
+                        Construida en estilo barroco guatemalteco, la Iglesia de Nuestra Señora de La Merced destaca por su hermosa fachada amarilla y blanca. Es famosa por sus procesiones de Semana Santa y por albergar imágenes religiosas de gran valor histórico y artístico. Su interior conserva retablos coloniales y obras de arte sacro.
+                    </p>
+                    <div class="info-box">
+                        <div class="info-item">
+                            <span class="info-label">Ubicación:</span>
+                            <span>11 Avenida y 5a Calle</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Horario:</span>
+                            <span>Lunes a Domingo, 7:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Entrada:</span>
+                            <span>Gratuita</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-placeholder">
+                    <img src="img/merced.jpg" alt="Iglesia La Merced" class="place-image">
+                </div>
+            </div>
+
+            <div class="place-card">
+                <div class="card-content">
+                    <h3 class="place-title">Iglesia del Cerrito del Carmen</h3>
+                    <p class="place-description">
+                        Ubicada en lo alto de una colina, esta pequeña iglesia ofrece no solo un espacio de reflexión espiritual, sino también una vista panorámica espectacular de la ciudad de Guatemala. Su arquitectura sencilla pero encantadora y su ubicación privilegiada la convierten en un lugar especial para visitantes y locales.
+                    </p>
+                    <div class="info-box">
+                        <div class="info-item">
+                            <span class="info-label">Ubicación:</span>
+                            <span>12 Avenida y 2a Calle</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Horario:</span>
+                            <span>Lunes a Domingo, 8:00 AM - 5:00 PM</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Entrada:</span>
+                            <span>Gratuita</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-placeholder">
+                    <img src="img/cerrito.jpg" alt="Iglesia del Cerrito del Carmen" class="place-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Lugares Turísticos -->
+        <section id="lugares" class="section">
+            <h2 class="section-title">
+                <span class="neon-text">🏰</span> Lugares Turísticos
+            </h2>
+            
+            <div class="place-card">
+                <div class="card-content">
+                    <h3 class="place-title">Palacio Nacional de la Cultura</h3>
+                    <p class="place-description">
+                        Majestuoso edificio de estilo renacentista español-colonial, construido entre 1939 y 1943. Fue la sede del gobierno guatemalteco y hoy es un museo que alberga murales históricos, vitrales impresionantes y salones presidenciales. Sus patios interiores y su arquitectura monumental lo convierten en una joya arquitectónica imprescindible.
+                    </p>
+                    <div class="info-box">
+                        <div class="info-item">
+                            <span class="info-label">Ubicación:</span>
+                            <span>Plaza de la Constitución</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Horario:</span>
+                            <span>Lunes a Domingo, 9:00 AM - 5:00 PM</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Entrada:</span>
+                            <span>Q40 extranjeros, Q5 nacionales</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-placeholder">
+                    <img src="img/palacio.jpg" alt="Palacio Nacional de la Cultura" class="place-image">
+                </div>
+            </div>
+
+            <div class="place-card">
+                <div class="card-content">
+                    <h3 class="place-title">Plaza de la Constitución</h3>
+                    <p class="place-description">
+                        El corazón del Centro Histórico, rodeado por los edificios más emblemáticos de la ciudad: la Catedral Metropolitana, el Palacio Nacional y el Portal del Comercio. Es un espacio público vibrante donde convergen historia, cultura y vida cotidiana. Los domingos se llena de familias, artistas callejeros y vendedores de artesanías.
+                    </p>
+                    <div class="info-box">
+                        <div class="info-item">
+                            <span class="info-label">Ubicación:</span>
+                            <span>Centro de la Zona 1</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Horario:</span>
+                            <span>Acceso libre 24/7</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Entrada:</span>
+                            <span>Gratuita</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-placeholder">
+                    <img src="img/plaza.jpg" alt="Plaza de la Constitución" class="place-image">
+                </div>
+            </div>
+
+            <div class="place-card">
+                <div class="card-content">
+                    <h3 class="place-title">Mercado Central</h3>
+                    <p class="place-description">
+                        Reconstruido tras el terremoto de 1976, este mercado subterráneo es un laberinto colorido de artesanías guatemaltecas, textiles mayas, joyería de jade, cerámicas y souvenirs. Es el lugar perfecto para experimentar la cultura local, regatear y adquirir productos auténticos. También ofrece comida típica en sus comedores tradicionales.
+                    </p>
+                    <div class="info-box">
+                        <div class="info-item">
+                            <span class="info-label">Ubicación:</span>
+                            <span>8a Avenida y 8a Calle</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Horario:</span>
+                            <span>Lunes a Sábado, 6:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Entrada:</span>
+                            <span>Gratuita</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-placeholder">
+                    <img src="img/mercado.jpg" alt="Mercado Central" class="place-image">
+                </div>
+            </div>
+
+            <div class="place-card">
+                <div class="card-content">
+                    <h3 class="place-title">Arco de Correos</h3>
+                    <p class="place-description">
+                        Monumento histórico construido en 1908 que conectaba el antiguo edificio de Correos y Telégrafos con el Palacio del Ayuntamiento. Este arco neoclásico es uno de los símbolos más reconocibles del Centro Histórico de Guatemala. Su elegante estructura de piedra y sus detalles arquitectónicos lo convierten en un punto de referencia obligado para visitantes y un testimonio de la arquitectura de principios del siglo XX.
+                    </p>
+                    <div class="info-box">
+                        <div class="info-item">
+                            <span class="info-label">Ubicación:</span>
+                            <span>12 Calle y 7a Avenida</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Horario:</span>
+                            <span>Acceso exterior 24/7</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Entrada:</span>
+                            <span>Gratuita</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-placeholder">
+                    <img src="img/correos.jpg" alt="Arco de Correos" class="place-image">
+                </div>
+            </div>
+
+            <div class="place-card">
+                <div class="card-content">
+                    <h3 class="place-title">Pasaje Aycinena</h3>
+                    <p class="place-description">
+                        Elegante galería comercial de estilo art nouveau construida en 1920. Sus vitrales, detalles arquitectónicos y estructura de hierro forjado la convierten en una verdadera joya arquitectónica. Alberga tiendas especializadas y es un ejemplo excepcional del patrimonio arquitectónico guatemalteco de principios del siglo XX.
+                    </p>
+                    <div class="info-box">
+                        <div class="info-item">
+                            <span class="info-label">Ubicación:</span>
+                            <span>9a Avenida entre 8a y 9a Calle</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Horario:</span>
+                            <span>Lunes a Sábado, 9:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Entrada:</span>
+                            <span>Gratuita</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-placeholder">
+                    <img src="img/pasaje.jpg" alt="Pasaje Aycinena" class="place-image">
+                </div>
+            </div>
+
+            <div class="place-card">
+                <div class="card-content">
+                    <h3 class="place-title">Biblioteca Nacional</h3>
+                    <p class="place-description">
+                        Importante institución cultural que resguarda el patrimonio bibliográfico de Guatemala. Su edificio es un ejemplo de arquitectura funcionalista de mediados del siglo XX. Alberga colecciones de documentos históricos, manuscritos antiguos, periódicos y libros raros que documentan la historia del país.
+                    </p>
+                    <div class="info-box">
+                        <div class="info-item">
+                            <span class="info-label">Ubicación:</span>
+                            <span>5a Avenida y 8a Calle</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Horario:</span>
+                            <span>Lunes a Viernes, 8:00 AM - 4:30 PM</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Entrada:</span>
+                            <span>Gratuita</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-placeholder">
+                    <img src="img/biblioteca.jpg" alt="Biblioteca Nacional" class="place-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Cultura y Experiencias -->
+        <section id="cultura" class="section">
+            <h2 class="section-title">
+                <span class="neon-text">🎭</span> Cultura y Experiencias
+            </h2>
+            
+            <div class="place-card">
+                <div class="card-content">
+                    <h3 class="place-title">6a Avenida (Sexta Avenida)</h3>
+                    <p class="place-description">
+                        La principal arteria peatonal del Centro Histórico, renovada como bulevar peatonal. Se extiende desde el Parque Central hacia el sur, llena de comercios, restaurantes, vendedores ambulantes y edificios históricos. Es perfecta para caminar, observar la arquitectura colonial y republicana, y experimentar la vida urbana guatemalteca.
+                    </p>
+                    <div class="info-box">
+                        <div class="info-item">
+                            <span class="info-label">Ubicación:</span>
+                            <span>Recorre toda la Zona 1 de norte a sur</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Horario:</span>
+                            <span>Recomendado visitarla durante el día</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Entrada:</span>
+                            <span>Gratuita</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-placeholder">
+                    <img src="img/sexta.jpg" alt="Sexta Avenida" class="place-image">
+                </div>
+            </div>
+
+            <div class="place-card">
+                <div class="card-content">
+                    <h3 class="place-title">Teatro Nacional Miguel Ángel Asturias</h3>
+                    <p class="place-description">
+                        Complejo cultural construido sobre las ruinas de la antigua Fortaleza de San José. Aunque técnicamente está en el límite con la Zona 4, es parte integral de la oferta cultural del centro. Ofrece presentaciones de teatro, ópera, ballet y conciertos. Su arquitectura moderna contrasta con los edificios coloniales del área.
+                    </p>
+                    <div class="info-box">
+                        <div class="info-item">
+                            <span class="info-label">Ubicación:</span>
+                            <span>24 Calle 3-81 (límite Zona 1/4)</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Horario:</span>
+                            <span>Variable según programación</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Entrada:</span>
+                            <span>Variable según evento</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-placeholder">
+                    <img src="img/teatro.jpg" alt="Teatro Nacional" class="place-image">
+                </div>
+            </div>
+
+            <div class="place-card">
+                <div class="card-content">
+                    <h3 class="place-title">Gastronomía Típica</h3>
+                    <p class="place-description">
+                        La Zona 1 alberga comedores y restaurantes tradicionales donde se puede degustar la auténtica gastronomía guatemalteca: pepián, kak'ik, jocón, tamales, chuchitos, y más. Desde fondas económicas hasta restaurantes establecidos, el centro histórico ofrece una experiencia culinaria que refleja la diversidad de la cocina nacional.
+                    </p>
+                    <div class="info-box">
+                        <div class="info-item">
+                            <span class="info-label">Ubicación:</span>
+                            <span>Varios en toda la Zona 1</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Horario:</span>
+                            <span>Variable, generalmente 7:00 AM - 8:00 PM</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Precio:</span>
+                            <span>Q25-Q80 por persona</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-placeholder">
+                    <img src="img/comidas.jpg" alt="Comida Típica" class="place-image">
+                </div>
+            </div>
+        </section>
+
+<!-- Sección de Desarrolladores -->
+<section id="desarrolladores" class="section">
+    <h2 class="section-title">
+        <span class="neon-text">👥</span> Equipo de Desarrollo
+    </h2>
     
-    function showStatus(message, type = 'loading') {
-      const statusDiv = document.getElementById("status");
-      statusDiv.innerHTML = `<div class="status ${type}">${message}</div>`;
-      
-      if (type !== 'error') {
-        setTimeout(() => statusDiv.innerHTML = '', 3000);
-      }
-    }
+    <div class="developers-grid">
+        <div class="developer-card">
+            <div class="dev-image-placeholder">
+                <img src="img/jose.png" alt="José López" class="dev-photo">
+            </div>
+            <h3 class="dev-name">José López</h3>
+            <p class="dev-role">Coordinador y Desarrollador Principal</p>
+            <p class="dev-description">Encargado de la coordinación general, lógica del sistema y desarrollo del código principal en Raspberry Pi que integra todos los componentes.</p>
+        </div>
 
-    async function getData() {
-      showStatus("🔄 Cargando datos desde Load Balancer...", "loading");
-      
-      try {
-        // IMPORTANTE: Usando HTTP desde HTTPS (Mixed Content)
-        const response = await fetch(`http://${LOAD_BALANCER_IP}/get-data`, {
-          method: 'GET',
-          mode: 'cors', // Importante para CORS
-        });
-        
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-        }
-        
-        const data = await response.json();
-        document.getElementById("output").textContent = JSON.stringify(data, null, 2);
-        showStatus("✅ Datos cargados correctamente", "success");
-        
-      } catch (error) {
-        console.error('Error:', error);
-        document.getElementById("output").textContent = `❌ Error al obtener datos: ${error.message}`;
-        showStatus(`❌ Error: ${error.message}`, "error");
-      }
-    }
+        <div class="developer-card">
+            <div class="dev-image-placeholder">
+                <img src="img/madeline.jpeg" alt="Madeline Prado" class="dev-photo">
+            </div>
+            <h3 class="dev-name">Madeline Prado</h3>
+            <p class="dev-role">Diseño y Maquetación Física</p>
+            <p class="dev-description">Encargada del diseño y elaboración completa de la maqueta física del proyecto. Programación del sistema.</p>
+        </div>
 
-    async function testHealth() {
-      showStatus("❤️ Verificando estado del servidor...", "loading");
-      
-      try {
-        const response = await fetch(`http://${LOAD_BALANCER_IP}/health`, {
-          method: 'GET',
-          mode: 'cors',
-        });
-        
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-        }
-        
-        const data = await response.json();
-        document.getElementById("output").textContent = JSON.stringify(data, null, 2);
-        showStatus("✅ Servidor funcionando correctamente", "success");
-        
-      } catch (error) {
-        console.error('Error:', error);
-        document.getElementById("output").textContent = `❌ Error en health check: ${error.message}`;
-        showStatus(`❌ Error: ${error.message}`, "error");
-      }
-    }
+        <div class="developer-card">
+            <div class="dev-image-placeholder">
+                <img src="img/angela.png" alt="Angela Escobar" class="dev-photo">
+            </div>
+            <h3 class="dev-name">Angela Escobar</h3>
+            <p class="dev-role">Asistente de Maquetación</p>
+            <p class="dev-description">Colaboración en el diseño y construcción de la maqueta física. Programación del sistema.</p>
+        </div>
 
-    window.addEventListener('load', () => {
-      console.log('🚀 Frontend HTTPS cargado');
-      console.log(`📡 Load Balancer: http://${LOAD_BALANCER_IP}`);
-      
-      if (location.protocol === 'https:') {
-        console.warn('⚠️ ADVERTENCIA: Ejecutando HTTPS → HTTP requests (Mixed Content)');
-        console.log('💡 Para producción, considera usar HTTPS end-to-end');
-      }
-    });
-  </script>
+        <div class="developer-card">
+            <div class="dev-image-placeholder">
+                <span>📱</span>
+            </div>
+            <h3 class="dev-name">Tobias Francisco</h3>
+            <p class="dev-role">Desarrollador Frontend Flutter</p>
+            <p class="dev-description">Desarrollo de la interfaz de usuario de la aplicación móvil en Flutter. Programación del sistema.</p>
+        </div>
+
+        <div class="developer-card">
+            <div class="dev-image-placeholder">
+                <span>⚙️</span>
+            </div>
+            <h3 class="dev-name">Rafael Francisco</h3>
+            <p class="dev-role">Desarrollador Backend</p>
+            <p class="dev-description">Implementación de la lógica del servidor y servicios backend. Programación del sistema.</p>
+        </div>
+
+        <div class="developer-card">
+            <div class="dev-image-placeholder">
+                <img src="img/keneth.png" alt="Keneth Aquíno" class="dev-photo">
+            </div>
+            <h3 class="dev-name">Keneth Aquíno</h3>
+            <p class="dev-role">Administrador de Base de Datos</p>
+            <p class="dev-description">Diseño, implementación y gestión de la base de datos del proyecto. Programación del sistema.</p>
+        </div>
+
+        <div class="developer-card">
+            <div class="dev-image-placeholder">
+                <img src="img/wylson.png" alt="Wylson Ezquivel" class="dev-photo">
+            </div>
+            <h3 class="dev-name">Wylson Ezquivel</h3>
+            <p class="dev-role">Especialista en Soldadura</p>
+            <p class="dev-description">Encargado de los trabajos de soldadura y ensamblaje de componentes. Programación del sistema.</p>
+        </div>
+
+        <div class="developer-card">
+            <div class="dev-image-placeholder">
+                <img src="img/cesar.png" alt="Cesar Francisco" class="dev-photo">
+            </div>
+            <h3 class="dev-name">Cesar Francisco</h3>
+            <p class="dev-role">Desarrollador de IA</p>
+            <p class="dev-description">Encargado de la elaboración e implementación de los sistemas de Inteligencia Artificial. Programación del sistema.</p>
+        </div>
+    </div>
+</section>
+
+        <!-- Consejos -->
+        <section class="tips-section">
+            <h3 class="tips-title">💡 Consejos para Visitar</h3>
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <span class="tip-icon">🕐</span>
+                    <p>Visita durante el día para mayor seguridad</p>
+                </div>
+                <div class="tip-item">
+                    <span class="tip-icon">📸</span>
+                    <p>No olvides tu cámara para la arquitectura histórica</p>
+                </div>
+                <div class="tip-item">
+                    <span class="tip-icon">💵</span>
+                    <p>Lleva efectivo para el Mercado Central</p>
+                </div>
+                <div class="tip-item">
+                    <span class="tip-icon">👟</span>
+                    <p>Usa zapatos cómodos para caminar</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-title">Grupo 3</p>
+            <p class="footer-subtitle">Arquitectura de Computadores y Ensambladores 1</p>
+            <p class="footer-copy">© 2024 Zona 1 Guatemala - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
